@@ -129,7 +129,8 @@ class Openvas:
 
         try:
             subprocess.check_call(
-                ['openvas', '--update-vt-info'], stdout=subprocess.DEVNULL
+                ['openvas', '-c', '/tmp/openvas.conf', '--update-vt-info'],
+                stdout=subprocess.DEVNULL,
             )
             logger.debug('Finished loading VTs into Redis DB')
         except (subprocess.SubprocessError, OSError) as err:
