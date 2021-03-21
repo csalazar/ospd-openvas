@@ -19,8 +19,7 @@
 
 import logging
 import subprocess
-
-from typing import Optional, Dict, Any
+from typing import Any, Dict, Optional
 
 logger = logging.getLogger(__name__)
 
@@ -96,7 +95,9 @@ class Openvas:
         param_list = dict()
 
         try:
-            result = subprocess.check_output(['openvas', '-s'])
+            result = subprocess.check_output(
+                ['openvas', '-c', '/tmp/openvas.conf', '-s']
+            )
             result = result.decode('ascii')
         except (subprocess.SubprocessError, OSError) as e:
             logger.warning('Could not gather openvas settings. Reason %s', e)
