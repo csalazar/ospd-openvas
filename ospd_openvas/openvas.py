@@ -148,7 +148,7 @@ class Openvas:
         if sudo:
             cmd += ['sudo', '-n']
 
-        cmd += ['openvas', '--scan-start', scan_id]
+        cmd += ['openvas', '-c', '/tmp/openvas.conf', '--scan-start', scan_id]
 
         try:
             return subprocess.Popen(cmd, shell=False)
