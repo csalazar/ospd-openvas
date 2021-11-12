@@ -53,7 +53,7 @@ ospd = "^20.8.2"
 
 [tool.poetry.dev-dependencies]
 pylint = "^2.6.0"
-rope = "^0.17.0"
+rope = "^0.21.1"
 autohooks-plugin-pylint = "^1.2.0"
 autohooks-plugin-black = {version = "^1.2.0", python = "^3.6"}
 black = {version = "20.8b1", python = "^3.6"}
